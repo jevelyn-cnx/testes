@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.envelope-container {
+    position: relative;
+}
+
+.envelope {
+    position: relative;
+    width: 700px;
+    height: 600px;
+    background: #FFB6C1;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: rotateX(30deg) rotateY(-20deg);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: 1s ease-in-out;
+}
+
+.envelope:hover {
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #FF69B4;
+    border-bottom: 5px solid #FF1493;
+    transform-origin: top;
+    transition: transform 1s ease-in-out;
+    transform: rotateX(-90deg);
+}
+
+.envelope:hover .flap {
+    transform: rotateX(0deg);
+}
+
+.letter {
+    position: absolute;
+    bottom: -8n0px;
+    left: 0;
+    width: 100%;
+    height: 520px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease, bottom 1s ease;
+}
+
+.envelope:hover .letter {
+    opacity: 1;
+    bottom: 0;
+}
+
+.letter-content h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+
+
